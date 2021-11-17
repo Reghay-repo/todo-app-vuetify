@@ -1,25 +1,34 @@
 <template>
     <nav>
-        <v-toolbar  flat app>
-            <v-toolbar-title>
+        <v-app-bar  flat app>
+            <v-app-bar-nav-icon class="grey--text" @click="drawer = !drawer"></v-app-bar-nav-icon>
+            <v-toolbar-title class="text--uppercase grey--text">
                 <span class="font-weight-light">Simple</span>
                 <span>Todo</span>
-            </v-toolbar-title class="white--text">
+            </v-toolbar-title >
             <v-spacer></v-spacer>
-            <v-btn flat color="grey" app>
+            <v-btn flat  elevation="0" class="grey--text" app>
                 <span>
                     Sign Out
                 </span>
                 <v-icon right>exit_to_app</v-icon>
-
             </v-btn>
-        </v-toolbar>
+
+
+        </v-app-bar>
+        <v-navigation-drawer v-model="drawer" app class="indigo">
+            <p class="white--text"> test</p>
+        </v-navigation-drawer>
     </nav>
 </template>
 
 <script>
 export default {
-
+    data() {
+        return {
+            drawer:false
+        }
+    }
 }
 </script>
 
