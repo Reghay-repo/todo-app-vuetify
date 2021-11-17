@@ -1,6 +1,6 @@
 <template>
   <div class="team">
-    <h2 class="text center">this is the dashboard </h2>
+    <h1 class="subheading grey--text">Team</h1>
   </div>
 </template>
 
