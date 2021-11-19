@@ -3,6 +3,20 @@
     <h1 class="subheading grey--text">Dashboard</h1>
 
     <v-container class="my-5">
+
+
+      <!-- order by  -->
+      <v-layout row class="mb-3">
+        <v-btn small flat class="grey--text mr-2" color="white" @click="sortBy('title')" elevation="0" app>
+          <v-icon>folder</v-icon>
+          <span class="caption">By project name</span>
+        </v-btn>
+        <v-btn small flat class="grey--text" color="white" @click="sortBy('person')" elevation="0" app>
+          <v-icon>person</v-icon>
+          <span class="caption">By person</span>
+        </v-btn>
+      </v-layout>
+      <!-- projects cards -->
       <v-card  class="pa-3 my-2 " v-for="project in projects" :key="project.id">
         <v-container>
           <v-layout row wrap :class="`my-2  project ${project.status}`" >
@@ -50,6 +64,11 @@
           {id: '4' ,title: 'Antiques Website', person: 'Oussama', due : '8 Dec 2021', status: 'On hold'},
           {id: '5' ,title: 'Multi vendor Ecomerce website', person: 'Oussama', due : '12th Oct 2020', status: 'complete'},
         ]
+      }
+    },
+    methods : {
+      sortBy(prop) {
+        this.projects.sort((a,b) => a[prop] < b[prop] ? -1 : 1)
       }
     }
 
