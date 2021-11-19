@@ -3,8 +3,8 @@
         <v-app-bar  flat app >
             <v-app-bar-nav-icon class="grey--text" @click="drawer = !drawer"></v-app-bar-nav-icon>
             <v-toolbar-title class="text--uppercase grey--text">
-                <span class="font-weight-light">Simple</span>
-                <span>Todo</span>
+                <span class="font-weight-light">Project</span>
+                <span>M</span>
             </v-toolbar-title >
             <v-spacer></v-spacer>
             <v-btn flat  elevation="0" class="grey--text" app>
