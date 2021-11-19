@@ -11,15 +11,15 @@
             <div class="ml-2">{{ project.title }}</div>
           </v-flex>
           <v-flex xs6 s4 md2 >
-            <div  class="caption grey--text">Person</div>
-            <div class="ml-1">{{ project.person }} </div>
+            <div  class="caption grey--text ml-2">Person</div>
+            <div class="ml-2">{{ project.person }} </div>
           </v-flex>
           <v-flex xs6 s4 md2 >
             <div  class="caption grey--text">Due by</div>
             <div class="ml-1"> {{ project.due}}</div>
           </v-flex>
           <v-flex xs2 s4 md2 >
-            <div  class="caption grey--text">Status</div>
+            <div  class="caption grey--text ml-2">Status</div>
              <div id="chip-container">
               <v-chip
                   pill
@@ -27,7 +27,7 @@
                   class="my-2 caption"
                   text-color="white"
                   :class="project.status"
-                >{{ project.status }} </v-chip>
+                >{{ project.status }}</v-chip>
              </div>
           </v-flex>
         </v-layout>
@@ -48,7 +48,7 @@
           {id: '2' ,title: 'Employee Management system', person: 'Oussama', due : '23 Nov 2021', status: 'ongoing'},
           {id: '3' ,title: 'Brand Store Management system ', person: 'Oussama', due : '30 Nov 2021', status: 'On hold'},
           {id: '4' ,title: 'Antiques Website', person: 'Oussama', due : '8 Dec 2021', status: 'On hold'},
-          {id: '5' ,title: 'Multi vendor Ecomerce website', person: 'Oussama', due : '12th Oct 2020', status: 'completed'},
+          {id: '5' ,title: 'Multi vendor Ecomerce website', person: 'Oussama', due : '12th Oct 2020', status: 'complete'},
         ]
       }
     }
@@ -77,11 +77,11 @@
   }
 
 
-  .project.completed {
+  .project.complete {
     border-left: 5px solid green;
   }
  
-  #chip-container .v-chip.completed {
+  #chip-container .v-chip.complete {
     background: green;
   }
 
