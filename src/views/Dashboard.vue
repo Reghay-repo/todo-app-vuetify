@@ -3,12 +3,12 @@
     <h1 class="subheading grey--text">Dashboard</h1>
 
     <v-container class="my-5">
-      <v-card  class="pa-3 my-2" v-for="project in projects" :key="project.id">
+      <v-card  class="pa-3 my-2 " v-for="project in projects" :key="project.id">
         <v-container>
-          <v-layout row wrap>
+          <v-layout row wrap :class="`my-2  project ${project.status}`" >
           <v-flex xs12 md6>
-            <div  class="caption grey--text" >Project Title</div>
-            <div class="ml-1">{{ project.title }}</div>
+            <div  class="caption grey--text ml-2 " >Project Title</div>
+            <div class="ml-2">{{ project.title }}</div>
           </v-flex>
           <v-flex xs6 s4 md2 >
             <div  class="caption grey--text">Person</div>
@@ -20,7 +20,15 @@
           </v-flex>
           <v-flex xs2 s4 md2 >
             <div  class="caption grey--text">Status</div>
-            <div class="ml-1">{{ project.status }} </div>
+             <div id="chip-container">
+              <v-chip
+                  pill
+                  small
+                  class="my-2 caption"
+                  text-color="white"
+                  :class="project.status"
+                >{{ project.status }} </v-chip>
+             </div>
           </v-flex>
         </v-layout>
         </v-container>
@@ -36,10 +44,11 @@
     data() {
       return {
         projects : [
-          {id: '1' ,title: 'Create a todo list', person: 'Oussama', due : '19th Nov 2021', status: 'Ongoing'},
-          {id: '2' ,title: 'Employee Management system', person: 'Oussama', due : '23 Nov 2021', status: 'Ongoing'},
+          {id: '1' ,title: 'Create a todo list', person: 'Oussama', due : '19th Nov 2021', status: 'ongoing'},
+          {id: '2' ,title: 'Employee Management system', person: 'Oussama', due : '23 Nov 2021', status: 'ongoing'},
           {id: '3' ,title: 'Brand Store Management system ', person: 'Oussama', due : '30 Nov 2021', status: 'On hold'},
-          {id: '4' ,title: 'Antiques Website', person: 'Oussama', due : '8 Dec', status: 'On hold'}
+          {id: '4' ,title: 'Antiques Website', person: 'Oussama', due : '8 Dec 2021', status: 'On hold'},
+          {id: '5' ,title: 'Multi vendor Ecomerce website', person: 'Oussama', due : '12th Oct 2020', status: 'completed'},
         ]
       }
     }
@@ -47,3 +56,33 @@
     
   }
 </script>
+
+
+
+<style>
+  .project.ongoing {
+    border-left: 5px solid orange;
+    
+  }
+
+  #chip-container .v-chip.ongoing {
+    background: orange;
+  }
+
+  .project.hold {
+    border-left: 5px solid red;
+  }
+  #chip-container .v-chip.hold {
+    background: red;
+  }
+
+
+  .project.completed {
+    border-left: 5px solid green;
+  }
+ 
+  #chip-container .v-chip.completed {
+    background: green;
+  }
+
+</style>
