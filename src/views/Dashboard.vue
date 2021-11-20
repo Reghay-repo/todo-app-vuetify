@@ -32,7 +32,7 @@
             <div  class="caption grey--text">Due by</div>
             <div class="ml-1"> {{ project.due}}</div>
           </v-flex>
-          <v-flex xs2 s4 md2 >
+          <v-flex xs6 s4 md2 >
             <div  class="caption grey--text ml-2">Status</div>
              <div id="chip-container">
               <v-chip
@@ -41,6 +41,7 @@
                   class="my-2 caption"
                   text-color="white"
                   :class="project.status"
+                  
                 >{{ project.status }}</v-chip>
              </div>
           </v-flex>
