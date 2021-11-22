@@ -2,7 +2,32 @@
   <div class="team">
     <h1 class="subheading grey--text">Team</h1>
     <v-container class="my-5">
-      
+      <v-layout row wrap>
+        <v-flex xs12 sm6 md4 lg3 v-for="person in team" :key="person.name">
+          <v-card  
+              class="text-center py-3 ma-3"
+              max-width="400">
+              <v-responsive class="py-4">
+                <!-- Avatar -->
+              <v-avatar
+                size="50">
+                  <img :src="person.avatar" alt="person.name">
+                </v-avatar> 
+              </v-responsive>
+              <!-- name -->
+              <div class="subheading">{{ person.name }}</div>
+              <!-- role -->
+              <div class="grey--text">{{ person.role }}</div>
+
+              <v-actions>
+                <v-btn flat elevation="0">
+                  <v-icon small left>message</v-icon>
+                  <span>message</span>
+                </v-btn>
+              </v-actions>
+          </v-card>
+        </v-flex>
+      </v-layout>
     </v-container>
   </div>
 </template>
@@ -11,7 +36,16 @@
 
   export default {
     name: 'Team',
-
+    data() {
+      return {
+        team: [
+          {avatar : '/avatars/oussama.png' ,name: 'oussama reghay', role : 'Laravel developement'},
+          {avatar : '/avatars/salim.png' ,name: 'Salim elkelloti', role : 'Selenium expert'},
+          {avatar : '/avatars/yassin.png' ,name: 'yassin elghizi', role : 'Database administrator'},
+          {avatar : '/avatars/adnan.png' ,name: 'adnan bensouda ', role : 'WordPress Developer/Python'}
+        ]
+      }
+    }
     
   }
 </script>

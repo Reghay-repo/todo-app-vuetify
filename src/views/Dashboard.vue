@@ -4,17 +4,44 @@
 
     <v-container class="my-5">
 
-
       <!-- order by  -->
       <v-layout row class="mb-3">
-        <v-btn small flat class="grey--text mr-2" color="white" @click="sortBy('title')" elevation="0" app>
-          <v-icon>folder</v-icon>
-          <span class="caption">By project name</span>
-        </v-btn>
-        <v-btn small flat class="grey--text" color="white" @click="sortBy('person')" elevation="0" app>
-          <v-icon>person</v-icon>
-          <span class="caption">By person</span>
-        </v-btn>
+        <v-tooltip bottom>
+          <template v-slot:activator="{ on, attrs }">
+               <v-btn small 
+                     flat
+                    class="grey--text mr-2" 
+                    color="white"
+                     @click="sortBy('title')"
+                      elevation="0" 
+                     v-bind="attrs"
+                      v-on="on"
+                      app>
+                <v-icon>folder</v-icon>
+                <span class="caption">By project name</span>
+              </v-btn>
+          </template>
+                <span>Sort projects by Project name</span>
+        </v-tooltip>
+        <v-tooltip bottom>
+          <template v-slot:activator="{ on, attrs }">
+               <v-btn small 
+                     flat
+                    class="grey--text mr-2" 
+                    color="white"
+                     @click="sortBy('person')"
+                      elevation="0" 
+                     v-bind="attrs"
+                      v-on="on"
+                      app>
+                <v-icon>person</v-icon>
+                <span class="caption">By person</span>
+              </v-btn>
+          </template>
+                <span small>Sort projects by person name</span>
+        </v-tooltip>
+
+       
       </v-layout>
       <!-- projects cards -->
       <v-card  class="pa-3 my-2 " v-for="project in projects" :key="project.id">
@@ -37,7 +64,7 @@
              <div id="chip-container">
               <v-chip
                   pill
-                  small
+                  smallnp
                   class="my-2 caption"
                   text-color="white"
                   :class="project.status"
