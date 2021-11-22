@@ -20,9 +20,9 @@
               <div class="grey--text">{{ person.role }}</div>
 
               <v-actions>
-                <v-btn flat elevation="0">
+                <v-btn class="mt-4"  elevation="0" color="" app>
                   <v-icon small left>message</v-icon>
-                  <span>message</span>
+                  <span>contact</span>
                 </v-btn>
               </v-actions>
           </v-card>
