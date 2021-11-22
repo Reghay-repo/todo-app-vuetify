@@ -40,6 +40,7 @@
 <script>
 
   export default {
+    title : 'my projects',
     name: 'Projects',
     data() {
       return {
@@ -49,6 +50,7 @@
           {id: '3' ,title: 'Brand Store Management system ', person: 'Oussama', due : '30 Nov 2021', status: 'On hold'},
           {id: '4' ,title: 'Antiques Website', person: 'Oussama', due : '8 Dec 2021', status: 'On hold'},
           {id: '5' ,title: 'Multi vendor Ecomerce website', person: 'Oussama', due : '12th Oct 2020', status: 'complete'},
+          {id: '6' ,title: 'brand store app', person: 'Yassin', due : '12th Oct 2020', status: 'complete'},
         ]
       }
     },
