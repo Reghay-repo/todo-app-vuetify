@@ -3,10 +3,10 @@
     <h1 class="subheading grey--text">Team</h1>
     <v-container class="my-5">
       <v-layout row wrap>
-        <v-flex xs12 sm6 md4 lg3 v-for="person in team" :key="person.name">
+        <v-flex xs12 sm6 md4  v-for="person in team" :key="person.name">
           <v-card  
-              class="text-center py-3 ma-3"
-              max-width="400">
+              class="text-center  py-3 ma-3"
+              max-width="500">
               <v-responsive class="py-4">
                 <!-- Avatar -->
               <v-avatar
@@ -41,7 +41,6 @@
         team: [
           {avatar : '/avatars/oussama.png' ,name: 'oussama reghay', role : 'Laravel developement'},
           {avatar : '/avatars/salim.png' ,name: 'Salim elkelloti', role : 'Selenium expert'},
-          {avatar : '/avatars/yassin.png' ,name: 'yassin elghizi', role : 'Database administrator'},
           {avatar : '/avatars/adnan.png' ,name: 'adnan bensouda ', role : 'WordPress Developer/Python'}
         ]
       }
