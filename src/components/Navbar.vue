@@ -1,13 +1,13 @@
 <template>
     <nav>
-        <v-app-bar  flat app >
+        <v-app-bar  text app >
             <v-app-bar-nav-icon class="grey--text" @click="drawer = !drawer"></v-app-bar-nav-icon>
             <v-toolbar-title class="text--uppercase grey--text">
                 <span class="font-weight-light">Project</span>
                 <span>M</span>
             </v-toolbar-title >
             <v-spacer></v-spacer>
-            <v-btn flat  elevation="0" class="grey--text" app>
+            <v-btn text  elevation="0" class="grey--text" app>
                 <span>
                     Sign Out
                 </span>
@@ -23,6 +23,9 @@
                         <img src="/avatars/oussama.png" alt="avatar">
                     </v-avatar>
                     <p class="white--text subheading mt-3">Oussama reghay</p>
+                </v-flex>
+                <v-flex class="mt-4 mb-3">
+                    <popup/>
                 </v-flex>
             </v-layout>
             <v-list>
@@ -42,7 +45,12 @@
 </template>
 
 <script>
+import Popup from './Popup';
+
 export default {
+    components : {
+        Popup
+    },
     data() {
         return {
             drawer:false,

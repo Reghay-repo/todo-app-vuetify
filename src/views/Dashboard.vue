@@ -9,7 +9,7 @@
         <v-tooltip bottom>
           <template v-slot:activator="{ on, attrs }">
                <v-btn small 
-                     flat
+                     text
                     class="grey--text mr-2" 
                     color="white"
                      @click="sortBy('title')"
@@ -26,7 +26,7 @@
         <v-tooltip bottom>
           <template v-slot:activator="{ on, attrs }">
                <v-btn small 
-                     flat
+                     text
                     class="grey--text mr-2" 
                     color="white"
                      @click="sortBy('person')"
