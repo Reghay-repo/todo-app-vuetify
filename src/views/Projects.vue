@@ -2,24 +2,6 @@
   <div class="projects">
     <h1 class="subheading grey--text">Projects</h1>
 
-    <!-- <template>
-  <v-expansion-panels>
-    <v-expansion-panel
-      v-for="(item,i) in 5"
-      :key="i"
-    >
-      <v-expansion-panel-header>
-        Item
-      </v-expansion-panel-header>
-      <v-expansion-panel-content>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </v-expansion-panel-content>
-    </v-expansion-panel>
-  </v-expansion-panels>
-</template> -->
-
-
-
   <v-expansion-panels>
     <v-expansion-panel v-for="project in projects" :key="project.id">
       <v-expansion-panel-header>{{ project.title }} </v-expansion-panel-header>
@@ -50,7 +32,6 @@
           {id: '3' ,title: 'Brand Store Management system ', person: 'Oussama', due : '30 Nov 2021', status: 'On hold'},
           {id: '4' ,title: 'Antiques Website', person: 'Oussama', due : '8 Dec 2021', status: 'On hold'},
           {id: '5' ,title: 'Multi vendor Ecomerce website', person: 'Oussama', due : '12th Oct 2020', status: 'complete'},
-          {id: '6' ,title: 'brand store app', person: 'Yassin', due : '12th Oct 2020', status: 'complete'},
         ]
       }
     },
