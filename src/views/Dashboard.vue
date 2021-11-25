@@ -86,12 +86,12 @@
     data() {
       return {
         projects : [
-          {id: '1' ,title: 'Create a todo list', person: 'Oussama', due : '19th Nov 2021', status: 'ongoing'},
-          {id: '2' ,title: 'Employee Management system', person: 'Oussama', due : '23 Nov 2021', status: 'ongoing'},
-          {id: '3' ,title: 'Brand Store Management system ', person: 'Oussama', due : '30 Nov 2021', status: 'On hold'},
-          {id: '4' ,title: 'Antiques Website', person: 'Oussama', due : '8 Dec 2021', status: 'On hold'},
-          {id: '5' ,title: 'Multi vendor Ecomerce website', person: 'Oussama', due : '12th Oct 2020', status: 'complete'},
-          {id: '6' ,title: 'Multi vendor Ecomerce website', person: 'Saad', due : '12th Oct 2020', status: 'complete'},
+          {id: '1' ,title: 'Create a todo list', person: 'Oussama', due : '19th Nov 2021', status: 'ongoing',content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, modi?'},
+          {id: '2' ,title: 'Employee Management system', person: 'Oussama', due : '23 Nov 2021', status: 'ongoing',content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, modi?'},
+          {id: '3' ,title: 'Brand Store Management system ', person: 'Oussama', due : '30 Nov 2021', status: 'On hold',content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, modi?'},
+          {id: '4' ,title: 'Antiques Website', person: 'Oussama', due : '8 Dec 2021', status: 'On hold',content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, modi?'},
+          {id: '5' ,title: 'Multi vendor Ecomerce website', person: 'Oussama', due : '12th Oct 2020', status: 'complete',content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, modi?'},
+          {id: '6' ,title: 'Multi vendor Ecomerce website', person: 'Saad', due : '12th Oct 2020', status: 'complete',content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, modi?'},
         ]
       }
     },

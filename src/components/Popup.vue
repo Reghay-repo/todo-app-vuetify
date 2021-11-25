@@ -20,9 +20,9 @@
           Add new Project
         </v-card-title>
 
-        <v-form class="px-3"> 
-            <v-text-field label="Title" v-model="title" prepend-icon="folder" ></v-text-field>
-            <v-textarea v-model="information" prepend-icon="edit" label="information"></v-textarea>
+        <v-form class="px-3" ref="form"> 
+            <v-text-field label="Title" v-model="title" :rules="formRules"  prepend-icon="folder" ></v-text-field>
+            <v-textarea v-model="information" :rules="formRules" prepend-icon="edit" label="information"></v-textarea>
 
             <!-- date picker -->
            <v-menu
@@ -36,6 +36,7 @@
               clearable
               label="Due Date"
               readonly
+               :rules="formRules"
               prepend-icon="mdi-calendar"
               v-bind="attrs"
               v-on="on"
@@ -53,6 +54,7 @@
                     <v-btn
                         color="primary"
                         text
+                        :close-on-content-click="false"
                         @click="submit"
                     >
                         Add Project
@@ -70,24 +72,40 @@
 
 <script>
   import { format, parseISO } from 'date-fns'
+  // import db from '/firebase'
 
   export default {
     name : 'Popup',
     data: () => ({
         title : '',
         information : '',
-        due : null
+        due : null,
+        formRules: [
+          v => v.length >= 3 || 'more than 3 characters are required '
+        ]
     }),
     methods:{
       submit(){
-        console.log(this.title,this.information,parseISO(this.due))
+        if(this.$refs.form.validate()) {
+          // const project = {
+          //   person: 'oussama',
+          //   content: this.content,
+          //   title : this.title,
+          //   due: format(this.due, 'do MMM yyyy'),
+          //   status: 'on hold'
+
+          // }
+          // db.collection('projects').add(project).then( ()=> {
+          //   console.log('added to db');
+          // });
+        }
       }
     },
 
     computed: {
     
       computedDateFormattedDatefns () {
-        return this.due ? format(parseISO(this.due), 'EEEE, MMMM do yyyy') : ''
+        return this.due ? format(parseISO(this.due), 'do MMM  yyyy') : ''
       }
     },
   }
