@@ -40,8 +40,6 @@
       return {
         team: [
           {avatar : '/avatars/oussama.png' ,name: 'oussama reghay', role : 'Laravel developement'},
-          {avatar : '/avatars/salim.png' ,name: 'Salim elkelloti', role : 'Selenium expert'},
-          {avatar : '/avatars/adnan.png' ,name: 'adnan bensouda ', role : 'WordPress Developer/Python'}
         ]
       }
     }

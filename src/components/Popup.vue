@@ -1,7 +1,7 @@
 <template>
   <div class="text-center">
     <v-dialog
-      
+      v-model="dialog"
       width="500"
     >
       <template v-slot:activator="{ on, attrs }">
@@ -21,11 +21,12 @@
         </v-card-title>
 
         <v-form class="px-3" ref="form"> 
-            <v-text-field label="Title" v-model="title" :rules="formRules"  prepend-icon="folder" ></v-text-field>
-            <v-textarea v-model="information" :rules="formRules" prepend-icon="edit" label="information"></v-textarea>
+            <v-text-field label="Title" v-model="title"  :rules="formRules"  prepend-icon="folder" ></v-text-field>
+            <v-textarea v-model="information" :rules="formRules"  clearable prepend-icon="edit" label="information"></v-textarea>
 
             <!-- date picker -->
            <v-menu
+
           v-model="menu2"
           :close-on-content-click="false"
           max-width="290"
@@ -53,9 +54,7 @@
             <v-spacer></v-spacer>
                     <v-btn
                         color="primary"
-                        text
-                        :close-on-content-click="false"
-                        @click="submit"
+                        @click="submit(); dialog = false"
                     >
                         Add Project
                     </v-btn>
@@ -72,35 +71,59 @@
 
 <script>
   import { format, parseISO } from 'date-fns'
-  // import db from '/firebase'
+  import axios from 'axios';
+
+  axios.defaults.baseURL = (process.env.API_PATH !== 'production') ? 'http://localhost:8000/api/' : '';
+
+
+
+ 
 
   export default {
     name : 'Popup',
     data: () => ({
-        title : '',
-        information : '',
+        title : null,
+        information : null,
         due : null,
+        dialog:false,
         formRules: [
           v => v.length >= 3 || 'more than 3 characters are required '
         ]
     }),
     methods:{
-      submit(){
-        if(this.$refs.form.validate()) {
-          // const project = {
-          //   person: 'oussama',
-          //   content: this.content,
-          //   title : this.title,
-          //   due: format(this.due, 'do MMM yyyy'),
-          //   status: 'on hold'
 
-          // }
-          // db.collection('projects').add(project).then( ()=> {
-          //   console.log('added to db');
-          // });
+      submit(){
+
+        if(this.$refs.form.validate()) {
+          this.loading = true
+          const project = {
+               person: 'oussama',
+              information: this.information,
+              title: this.title,
+              status: 'on hold',
+             due: this.due
+           };
+          axios.post('/create', project)
+          .then(function (response) {
+            console.log(response);
+
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+
+         
         }
       }
     },
+
+    watch: {
+     
+    dialog() {
+        this.$refs.form.reset()
+
+    }
+  },
 
     computed: {
     

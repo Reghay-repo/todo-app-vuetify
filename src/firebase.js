@@ -1,6 +1,6 @@
-import firebase from 'firebase/app'
+import { initializeApp } from 'firebase/app';
 import { getFirestore } from "firebase/firestore"
-
+import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 const firebaseConfig = {
   apiKey: "AIzaSyAcFfUhJAtjTdGuEHVuVQM5fzbhEWeDTNs",
   authDomain: "project-management-app-9ff5e.firebaseapp.com",
@@ -12,12 +12,11 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
- firebase.initializeApp(firebaseConfig);
-
-
- const db = getFirestore();
-
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 db.settings({ timestampsInSnapshots: true });
+
+
 
 
 export default db;
